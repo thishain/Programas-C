@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1615915904 source:c:\users\thiago\desktop\faculdade\algoritmo\programas c\numero par-impar %mod\mod par impar\main.c
+	<stdio.h>
+	<stdlib.h>
+

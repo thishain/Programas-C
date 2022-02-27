@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1613854150 source:c:\users\thiago\desktop\xd\notas\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1614040873 source:c:\users\thiago\desktop\faculdade\algoritmo\notas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+

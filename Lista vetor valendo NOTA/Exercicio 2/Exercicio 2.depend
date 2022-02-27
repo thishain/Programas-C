@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1621975221 source:c:\users\thiago\desktop\faculdade\algoritmo\programas c\lista vetor valendo nota\exercicio 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

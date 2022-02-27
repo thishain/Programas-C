@@ -1,0 +1,423 @@
+EXERCICIO 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Estou cursando Análise e Desenvolvimento de Sistemas na FATEC-AM!\n");
+    return 0;
+}
+
+
+
+
+
+EXERCICIO 2
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+
+//Elaborar um programa que pede seu nome, endereço, CEP e telefone. Ele deve imprimir seu nome completo na primeira linha, seu endereço na segunda, e o CEP e telefone na terceira.
+
+
+int main()
+{
+
+            setlocale(LC_ALL,"");
+            char
+                nome[50],
+                endereco[50],
+                cep[20],
+                telefone[12];
+
+                system("color 2");
+
+                //Entrada de Dados
+                    printf("Bem Vindo\n");
+                    printf("==========\n");
+                    printf("Digite seu NOME: ");
+                    fgets(nome, 50, stdin);
+                    printf("=========================\n");
+
+                    printf("Digite seu ENDEREÇO: ");
+                    fgets(endereco, 50, stdin);
+                    printf("=========================\n");
+
+                    printf("Digite seu CEP: ");
+                    fgets(cep, 20, stdin);
+                    printf("=========================\n");
+
+                    printf("Digite seu TELEFONE: ");
+                    fgets(telefone, 12, stdin);
+                    printf("=========================\n\n");
+                system("cls");
+
+                //Saida de dados
+
+                    printf("Seu NOME é: %s\n", nome);
+
+                    printf("Seu ENDEREÇO é: %s\n", endereco);
+
+                    for(int i=0;telefone[i]!='\0';i++)
+                         {
+                         if(telefone[i]=='\n')
+                             {
+                              telefone[i]=' ';
+                             }
+                          }
+
+                    printf("Seu TELEFONE : %se seu CEP é: %s\n", telefone, cep);
+                    printf("=========================\n");
+
+
+    return 0;
+}
+
+
+
+EXERCICIO 3
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {
+
+//   Faça um programa que mostre na tela algumas frases assassinas, que são aquelas que fazem com muitas ideias sejam perdidas antes que amadureçam ou sejam aprofundadas.
+//   Eis alguns exemplos (bole também os seus):
+
+//          "Isto não vai dar certo"
+
+//          "Você nunca vai conseguir"
+
+//          "Você vai se estrepar"
+
+//          "Não vai dar em nada"
+
+//          "Está tudo errado!"
+
+        setlocale(LC_ALL,"");
+        int op;
+
+            do {
+
+                printf("1 a 5: ");
+                scanf("%i", &op);
+
+                    if(op == 0) {
+                            break;
+
+                        } else {
+
+                            switch(op) {
+                        case 1:
+                            printf("Você é fraco!\n");
+                            break;
+                        case 2:
+                            printf("Você nunca vai conseguir!\n");
+                            break;
+                        case 3:
+                            printf("Você vai se ferrar!\n");
+                            break;
+                        case 4:
+                            printf("Não vai dar em nada!\n");
+                            break;
+                        case 5:
+                            printf("Está tudo errado!\n");
+                            break;
+                        default:
+                            break;
+                    }
+                            }
+
+
+
+            }while (op<=5);
+
+
+
+    return 0;
+
+}
+
+EXERCICIO 4
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+
+//Quadrado - Escrever um programa que mostre a seguinte figura no alto da tela:
+
+//XXXXX
+// X X
+// X X
+// X X
+//XXXXX
+{
+    printf("XXXXXXXXXX\n");
+    printf("X        X\n");
+    printf("X        X\n");
+    printf("X        X\n");
+    printf("XXXXXXXXXX\n");
+    return 0;
+}
+
+
+
+
+EXERCICIO 5
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+
+//6. Tabela de notas - Escreva um programa que produza a seguinte saída na tela:
+
+//ALUNO(A) NOTA
+
+//========= =====
+
+//MARAIA 9.0
+
+//JOÃO DEZ
+
+//ELIS 4.5
+
+//MARIO 7.0
+
+{
+        printf("Aluno(A)\t NOTA\n");
+        printf("========= \t =====\n");
+
+        printf("MARAIA \t\t 9.0\n");
+        printf("JOAO \t\t DEZ\n");
+        printf("ELIS \t\t 4.5\n");
+        printf("MARIO \t\t 7.0\n");
+
+        return 0;
+}
+
+
+EXERCICIO 6
+#include <stdio.h>
+#include <stdlib.h>
+
+
+//7. Letra grande - Elabore um programa para produzir na tela a letra F, de FATEC, usando a própria. Se fosse ‘F’, seria assim:
+
+//FFFFFF
+
+//F
+
+//F
+
+//FFFFFF
+int main()
+
+{
+            system("color 2");
+                printf("FFFFF\n");
+                printf("F\n");
+                printf("F\n");
+                printf("FFFFF\n");
+                printf("F\n");
+                printf("F\n");
+                printf("F\n");
+
+
+
+
+
+    return 0;
+}
+
+EXERCICIO 7
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+//8. Menu - Elabore um programa que mostre o seguinte menu na tela:
+
+//Cadastro de Alunos
+
+//1 - Inclui
+
+//2 - Altera
+
+//3 - Exclui
+
+//4 – Consulta
+
+//5 - Fim
+
+//Opção:
+
+
+int main()
+{
+        int opcao;
+        setlocale(LC_ALL, "");
+
+        printf("Cadastro de alunos\n\n");
+        printf("1 - Inclui\n");
+        printf("2 - Altera\n");
+        printf("3 - Exclui\n");
+        printf("4 - Consulta\n");
+        printf("5 - Fim\n\n");
+        printf("OPÇÃO: ");
+        scanf("%i", &opcao);
+
+
+    return 0;
+}
+
+EXERCICIO 8
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+int main()
+
+{
+
+        setlocale(LC_ALL, "");
+            int op = 1;
+
+
+            do {
+            system("COLOR 1");
+            printf("\t         X\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+                        system("COLOR 2");
+            printf("\t         O\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+
+                        system("COLOR 3");
+            printf("\t         O\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+                        system("COLOR 4");
+            printf("\t         O\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+                            system("COLOR 5");
+            printf("\t         O\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+                                        system("COLOR 6");
+            printf("\t         O\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+                                        system("COLOR 7");
+            printf("\t         O\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+                                        system("COLOR 8");
+            printf("\t         O\n");
+            printf("\t        XXX\n");
+            printf("\t       OXOXO\n");
+            printf("\t      XXXOXXX\n");
+            printf("\t     OXXOXOXXO\n");
+            printf("\t    XXXOXXXOXXX\n");
+            printf("\t   OXXOXXXXXOXXO\n");
+            printf("\t        XXX\n");
+            printf("\t        XXX\n");
+            printf("\t       XXXXX\n\n");
+
+            system("pause");
+            system("cls");
+
+            } while(op == 1);
+
+
+
+
+
+
+    return 0;
+}
+
+
+
+
+

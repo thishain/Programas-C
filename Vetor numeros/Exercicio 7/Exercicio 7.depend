@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1621960478 source:c:\users\thiago\desktop\faculdade\algoritmo\programas c\vetor numeros\exercicio 7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+    int n1, n2, n3;
+        setlocale (LC_ALL, "");
+    ///Solicitar os valores do usuario para n1, n2, n3.
+    ///determinar qual deles é o maior.
+    /// && = OU
+    /// || = E
+
+
+        printf("Digite o valor de N1: ");
+        scanf("%i", &n1);
+
+        printf("Digite o valor de N2: ");
+        scanf("%i", &n2);
+
+        printf("Digite o valor de N3: ");
+        scanf("%i", &n3);
+
+            if((n1 > n2) && (n1 > n3)) {
+                printf("O maior valor é N1: %i", n1);
+            }
+
+            if((n2 > n1) && (n2 > n3)) {
+                printf("O maior valor é N2: %i", n2);
+            }
+
+            if((n3 > n1) && (n3 > n2)) {
+                printf("O maior valor é N3: %i", n3);
+            }
+
+
+    return 0;
+}

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1615234334 source:c:\users\thiago\desktop\faculdade\algoritmo\programas c\programa geral\main.c
+	<stdio.h>
+	<stdlib.h>
+

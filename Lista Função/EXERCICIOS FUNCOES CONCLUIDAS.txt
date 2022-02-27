@@ -1,0 +1,496 @@
+EXERCICIO 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+
+//DECLARAÇÃO DE VARIAVEIS
+float raio, volume, pi = 3.14;
+
+//CARREGANDO A FUNÇÃO
+void volumeCirculo(float raio);
+
+//ESCREVENDO A FUNÇÃO
+void volumeCirculo (float raio) {
+
+      volume = 4 * pi * pow(raio, 3) / 3;
+      printf("O volume da esfera é: %.2f", volume);
+
+}
+
+//FUNÇÃO PRINCIPAL
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+        printf("Digite o raio da esfera: ");
+        scanf("%f%*c", &raio);
+        //CHAMANDO A FUNÇÃO PASSANDO O PARAMETRO (RAIO)
+        volumeCirculo(raio);
+}
+
+EXERCICIO 2 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+float calculaMedia (char letra, float nota1, float nota2, float nota3, float media);
+
+float media, nota1, nota2, nota3;
+char letra;
+
+
+float calculaMedia (char letra, float nota1, float nota2, float nota3, float media) {
+
+        if((letra == 'A') || (letra == 'a')) {
+            media = (nota1 + nota2 + nota3) / 3;
+
+            printf("A media aritmética é: %.2f\n", media);
+        }
+
+        else if((letra == 'P') || (letra == 'p')) {
+            media = ((nota1 * 5) + (nota2 * 3) + (nota3 * 2)) / 10;
+
+            printf("A media ponderada é: %.2f\n", media);
+        }
+
+        else if((letra == 'H') || (letra == 'h')) {
+            media = 3 / (1/nota1 + 1/nota2 + 1/nota3);
+
+            printf("A media harmonica é: %.2f\n", media);
+        }
+
+    return media;
+
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+
+        printf("Digite uma das letras [A, P, H]: ");
+        scanf("%c%*c", &letra);
+
+        if(letra != 'A' && letra != 'a' && letra != 'P' && letra != 'p' && letra != 'H' && letra != 'h') {
+            printf("Opção invalida.\n");
+        }
+
+        else {
+                printf("Digite a 1ª nota do aluno: ");
+                scanf("%f%*c", &nota1);
+
+                printf("Digite a 2ª nota do aluno: ");
+                scanf("%f%*c", &nota2);
+
+                printf("Digite a 3ª nota do aluno: ");
+                scanf("%f%*c", &nota3);
+
+                calculaMedia(letra, nota1, nota2, nota3, media);
+        }
+
+    return 0;
+}
+
+
+EXERCICIO 3
+#include <stdio.h>
+#include <stdlib.h>
+
+testeValor(int valor);
+
+int valor, qtd=0, primo=0, i;
+
+int testeValor(int valor){
+    int retorno;
+
+    if(valor % 2 == 0 || valor/valor == 0) {//PAR
+        retorno = 0;
+    }
+
+    else {//IMPAR
+        for (i=1;i<=valor;i++){
+            if (valor%i==0){
+                qtd= qtd+1;
+            }
+        }
+            if (qtd>2){
+                primo=1;
+            }
+            else {
+              primo=0;
+            }
+        if(primo == 1) {
+            retorno = 0;
+        }
+        else {
+            retorno = 1;
+        }
+
+    }
+
+    return printf("%d\n", retorno);
+}
+
+int main()
+{
+    printf("Digite um valor: ");
+    scanf("%d%*c", &valor);
+
+    testeValor(valor);
+
+    return 0;
+}
+
+EXERCICIO 4
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+
+void recebe_valor();
+void baskara(float a, float b, float c);
+float imprime_valor(float x1, float x2, float delta);
+
+
+//VARIAVEIS GLOBAIS
+float a, b, c, delta, x1, x2;
+
+void recebe_valor() {
+
+        printf("Digite o valor de A: ");
+        scanf("%f%*c", &a);
+
+        printf("Digite o valor de B: ");
+        scanf("%f%*c", &b);
+
+        printf("Digite o valor de C: ");
+        scanf("%f%*c", &c);
+
+    baskara(a, b, c);
+}
+
+
+void baskara(float a, float b, float c) {
+
+    delta = b*b - 4*a*c;
+
+        if (delta==0){
+            x1 = -b /(2*a);
+        }
+
+        else if (delta>0){
+            x1 = (-b - sqrt(delta))/(2*a);
+            x2 = (-b + sqrt(delta))/(2*a);
+        }
+}
+
+float imprime_valor(float x1, float x2, float delta) {
+
+    if (delta < 1) {
+        printf("Não possui raiz real!\n");
+    }
+
+    else{
+        printf("A primeira raiz é:%.2f\n",x1);
+        printf("A segunda raiz é:%.2f\n",x2);
+    }
+
+    return x1, x2;
+
+}
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+
+    recebe_valor();
+    baskara(a, b, c);
+    imprime_valor (x1, x2, delta);
+
+    return 0;
+}
+
+EXERCICIO 5
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void recebeTempo();
+int calculaTempo(int segundos, int horas, int minutos, int s);
+//VARIAVEIS
+int segundos, horas, minutos, resto, s;
+
+void recebeTempo() {
+     printf("Digite o tempo de duração da fábrica[em SEGUNDOS]: ");
+     scanf("%d%*c", &segundos);
+
+    calculaTempo(segundos, horas, minutos, s);
+}
+
+int calculaTempo(int segundos, int horas, int minutos, int s) {
+
+    horas = segundos / 3600;
+    resto = segundos % 3600;
+    minutos = resto / 60;
+    s = resto % 60;
+
+    return printf("%d HORAS %d MINUTOS %d SEGUNDOS!", horas, minutos, s);
+
+}
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    recebeTempo();
+
+    return 0;
+}
+
+
+EXERCICIO 6
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+
+void recebeTempo();
+int calculaTempo(int anos, int meses, int dias);
+//VARIAVEIS
+int anos, meses, dias, resto, totalDias;
+
+//FUNÇÃO PARA RECEBER OS DADOS
+void recebeIdade() {
+
+     printf("Digite a idade da pessoa em [ANOS]: ");
+     scanf("%d%*c", &anos);
+
+     printf("Digite o restante da idade da pessoas em [MESES]: ");
+     scanf("%d%*c", &meses);
+
+     printf("Digite o restante da idade da pessoa em [DIAS]: ");
+     scanf("%d%*c", &dias);
+
+    calculaIdade(anos, meses, dias);
+}
+
+//FUNÇÃO QUE CALCULA OS DIAS TOTAIS DA IDADE
+int calculaIdade(int anos, int meses, int dias) {
+
+    totalDias = anos * 365;
+    totalDias = totalDias + (meses * 30);
+    totalDias = totalDias + dias;
+
+    return printf("%d DIAS!", totalDias);
+
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    //CHAMA A FUNÇÃO RECEBEIDADE
+    recebeIdade();
+
+    return 0;
+}
+
+
+EXERCICIO 7 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <stdbool.h>
+
+void recebeNumero();
+int numeroPerfeito(int numero);
+//VARIAVEIS
+int numero, i, vP =0;
+bool ver;
+
+//FUNÇÃO PARA RECEBER OS DADOS
+void recebeNumero() {
+
+     printf("Digite um numero: ");
+     scanf("%d%*c", &numero);
+
+    numeroPerfeito(numero);
+}
+
+//FUNÇÃO QUE CALCULA OS DIAS TOTAIS DA IDADE
+int numeroPerfeito(int numero) {
+
+    for(i=1;i<numero;i++) {
+        if(numero%i == 0) {
+            vP = vP + i;
+            printf("Divisor: %d\n", i);
+                if (vP == numero) {
+                    ver = true;
+                }
+                else {
+                    ver = false;
+
+                }
+        }
+    }
+
+
+    return fputs(ver ? "\nTRUE\n" : "\nFALSE\n", stdout);
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    //CHAMA A FUNÇÃO RECEBENUMERO
+    recebeNumero();
+
+
+    return 0;
+}
+
+
+EXERCICIO 8
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void recebeIdade(int idade);
+void calculaIdade(int idade);
+//VARIAVEIS GLOBAIS
+int idade;
+
+//FUNÇÃO PARA RECEBER OS DADOS
+void recebeIdade(int idade) {
+    //CHAMA A FUNÇÃO CALCULA IDADE
+    calculaIdade(idade);
+}
+
+//CALCULO DE IDADE PARA TABELA DE CATEGORIA
+void calculaIdade(int idade) {
+    if(idade <=5 && idade<=7) {
+        printf("Infantil A");
+    }
+
+    else if(idade >=8 && idade<=10) {
+        printf("Infantil B");
+    }
+
+    else if(idade >=11 && idade<=13) {
+        printf("Juvenil A");
+    }
+    else if(idade >=14 && idade<=17) {
+        printf("Juvenil B");
+    }
+
+    else {
+        printf("Adulto");
+    }
+
+
+}
+
+//FUNÇÃO PRINCIPAL
+int main()
+{
+    printf("Digite a idade do nadador: ");
+    scanf("%d%*c", &idade);
+
+    //CHAMA A FUNÇÃO RECEBEIDADE
+    recebeIdade(idade);
+
+    setlocale(LC_ALL, "Portuguese");
+
+
+
+
+    return 0;
+}
+
+
+EXERCICIO 9
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <stdbool.h>
+
+void recebeNumero(int numero);
+//VARIAVEIS GLOBAIS
+int numero;
+bool ver;
+
+//FUNÇÃO PARA RECEBER OS DADOS
+void recebeNumero(int numero) {
+    if(numero >0) {
+        ver = true;
+    }
+
+    else {
+        ver = false;
+    }
+
+    return fputs(ver ? "\nTRUE\n" : "\nFALSE\n", stdout);
+}
+
+
+
+//FUNÇÃO PRINCIPAL
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+        printf("Digite um numero inteiro: ");
+        scanf("%d%*c", &numero);
+
+        //CHAMA A FUNÇÃO recebeNumero
+        recebeNumero(numero);
+
+    return 0;
+}
+
+
+EXERCICIO 10
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <stdbool.h>
+
+void recebeNumero(int numero);
+//VARIAVEIS GLOBAIS
+int numero;
+bool ver;
+
+//FUNÇÃO PARA RECEBER OS DADOS
+void recebeNumero(int numero) {
+
+        if(numero % 2 == 0) {
+            ver = true;
+        }
+
+        else {
+            ver = false;
+        }
+
+
+    return fputs(ver ? "TRUE\n" : "FALSE\n", stdout);
+}
+
+//FUNÇÃO PRINCIPAL
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+        printf("Digite um numero inteiro: ");
+        scanf("%d%*c", &numero);
+
+        //CHAMA A FUNÇÃO recebeNumero
+        recebeNumero(numero);
+
+    return 0;
+}
+
+
+
+
+

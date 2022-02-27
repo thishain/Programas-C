@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1613498067 source:c:\users\thiago\desktop\xd\calc\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1614026272 source:c:\users\thiago\desktop\faculdade\algoritmo\calc\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1614160208 source:c:\users\thiago\desktop\faculdade\algoritmo\programas c\calc\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<windows.h>
+	<conio.h>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1623176397 source:c:\users\thiago\desktop\faculdade\algoritmo\programas c\lista função\exercicio 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<locale.h>
+

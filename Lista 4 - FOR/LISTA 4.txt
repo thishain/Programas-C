@@ -1,0 +1,245 @@
+1) ------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    int numerosDigitados =0, i, qtdeNumeros =0, n1 = 0, n = 0, k = 0, numerosPares = 0, mediaPares = 0, somaPares =0;
+    float soma =0, maior = 0, menor = 0, media = 0;
+
+    printf("Digite a quantidade de numeros: ");
+    scanf("%d%*c", &numerosDigitados);
+
+
+
+        for (i=0;i<numerosDigitados;i++) {
+                printf("\nDigite a quantidade do numero %d:", i + 1);
+                scanf("%d%*c", &n);
+
+            if (n > maior) {
+                    maior = n;
+            }
+
+            if (menor == 0) {
+                    menor = n;
+
+            }
+            else if (n < menor) {
+                menor = n;
+            }
+
+            if (n % 2 == 0){
+                numerosPares++;
+                somaPares = somaPares + n;
+                mediaPares = (mediaPares + n) / numerosPares;
+            }
+
+                soma = soma + n;
+                qtdeNumeros++;
+                media = soma / numerosDigitados;
+
+    }
+
+                    system("cls");
+                    printf("NUMEROS PARES: %d\n", numerosPares);
+                    printf("SOMA DOS PARES: %d\n", somaPares);
+                    printf("A SOMA dos número é: %.2f\n", soma);
+                    printf("O MAIOR número é: %.2f\n", maior);
+                    printf("O MENOR número é: %.2f\n", menor);
+                    printf("A MEDIA número é: %.2f\n", media);
+                    printf("A MEDIA dos números pares é: %.2d\n", mediaPares);
+                    printf("A QUANTIDADE de números digitados é: %d\n", qtdeNumeros);
+
+
+    return 0;
+}
+
+2) --------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numero, i, primo=0;
+
+
+        printf("Digite um número(MAIOR QUE 1): ");
+        scanf("%d%*c", &numero);
+
+            for(i=1;i<=numero;i++) {
+                if(numero % i == 0) {
+                    primo++;
+                }
+                printf("valor que divide: %d\n", i);
+                printf("numero: %d\n", numero);
+                printf("primo: %d\n", primo);
+
+            }
+
+                if(primo == 2) {
+                    printf("O numero e primo!");
+                }
+                else {
+                    printf("O numero nao eh primo!");
+                }
+
+
+
+    return 0;
+}
+3) ----------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float i,k;
+    float alturaChico = 1.5, alturaZe = 1.1, anos;
+
+
+
+        for(alturaZe;alturaZe <alturaChico;alturaZe = alturaZe + 0.03) {
+                    alturaChico = alturaChico + 0.02;
+                    anos++;
+
+                    printf("\nZE: %.2f", alturaZe);
+                    printf("\nCHICO: %.2f", alturaChico);
+
+
+        }
+
+                printf("\nPrecisa de %.2f anos para o Ze ser maior que o chico!", anos);
+
+
+
+    return 0;
+}
+
+4) --------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{/*  Um funcionário recebe aumento anual. Em 1995 foi contratado por 2000 reais.
+     Em 1996 recebeu aumento de 1.5%. A partir de 1997, os aumentos sempre correspondem ao dobro do
+     ano anterior.
+     Faça programa que determine o salário atual do funcionário.
+
+    */
+
+        int i;
+        float aumentoPct = 0.0075, salarioAtual = 2000, anoAtual = 2021;
+        long double salarioFinal;
+
+            for(i = 1996;i<= anoAtual;i++) {
+
+                        aumentoPct = aumentoPct * 2;
+                        salarioAtual = (salarioAtual * aumentoPct) + salarioAtual;
+                        salarioFinal = salarioAtual;
+
+                        printf("\nANO: %d", i);
+                        printf("\nPORCENTAGEM: %.3f", aumentoPct);
+                        printf("\nSALARIO: %.2f\n", salarioAtual);
+
+            }
+
+            printf("\nSalario no ano de 2021 eh: %le", salarioFinal);
+
+
+
+
+    return 0;
+}
+5)--------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{/*
+    5) Escreva um programa que receba como entrada o valor do saque realizado pelo cliente de um banco e
+    retorne quantas notas de cada valor serão necessárias para atender ao saque com a
+    menor quantidade de notas possível. Serão utilizadas notas de 100, 50, 20, 10, 5, 2 e 1 real.
+    */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{/*
+    5) Escreva um programa que receba como entrada o valor do saque realizado pelo cliente de um banco e
+    retorne quantas notas de cada valor serão necessárias para atender ao saque com a
+    menor quantidade de notas possível. Serão utilizadas notas de 100, 50, 20, 10, 5, 2 e 1 real.
+    */
+
+        int n100=0, n50=0, n20=0, n10=0, n5=0, n2=0, n1=0, i, valor;
+
+        int r100=0, r50=0, r20=0, r10=0, r5=0, r2=0, r1=0;
+
+
+        printf("Digite o valor que quer sacar [VALORES INTEIROS]: ");
+        scanf("%d%*c", &valor);
+
+
+            for (i=0;i<valor;i++){
+
+                    n100 = valor / 100;
+                    r100 = valor % 100;
+
+                    n50 = r100 / 50;
+                    r50 = r100 % 50;
+
+                    n20 = r50 / 20;
+                    r20 = r50 % 20;
+
+                    n10 = r20 / 10;
+                    r10 = r20 % 10;
+
+                    n5 = r10 / 5;
+                    r5 = r10 % 5;
+
+                    n2 = r5 / 2;
+                    r2 = r5 % 2;
+
+                    n1 = r2 / 1;
+                    r1 = r2 % 1;
+    }
+
+
+
+                        printf("\nVALOR: %d", valor);
+                        if (n100 > 0) {
+                            printf("\nCedulas de R$ 100,00: %d", n100);
+                        }
+
+                        if (n50 > 0) {
+                            printf("\nCedulas de R$ 50,00: %d", n50);
+                        }
+
+                        if (n20 > 0) {
+                            printf("\nCedulas de R$ 20,00: %d", n20);
+                        }
+
+                        if (n10 > 0) {
+                            printf("\nCedulas de R$ 10,00: %d", n10);
+                        }
+
+                        if (n5 > 0) {
+                            printf("\nCedulas de R$ 5,00: %d", n5);
+                        }
+
+                        if (n2 > 0 ) {
+                            printf("\nCedulas de R$ 2,00: %d", n2);
+                        }
+
+                        if (n1 > 0 ){
+                            printf("\nCedulas de R$ 1,00: %d", n1);
+                        }
+
+
+
+    return 0;
+}
